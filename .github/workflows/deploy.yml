@@ -1,27 +1,27 @@
 name: Deploy To Render.com
-  on:
-    push:
-      branches:
-        - main
+on:
+  push:
+    branches:
+      - main
         
-  jobs:
-    deploy:
-      runs-on: ubuntu-latest
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
       
-      steps:
-        - name: Checkout
-          uses: actions/checkout@v4
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
           
-        - name: Setup python
-          uses: action/setup-python@v5.5.0
+      - name: Setup python
+        uses: action/setup-python@v5.5.0
           
-        with:
-          python-version: "3.14"
+      with:
+        python-version: "3.14"
           
-        - name: Install Dependecies
-          run: |
-            pip install -r requirements.txt
+      - name: Install Dependecies
+        run: |
+          pip install -r requirements.txt
         
-        - name: re-Deploy to Render
-          run: |
-            curl -X POST ${{secrets.RENDER_DEPLOY_HOOK}}           
+      - name: re-Deploy to Render
+        run: |
+          curl -X POST ${{secrets.RENDER_DEPLOY_HOOK}}           
