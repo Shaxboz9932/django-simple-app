@@ -30,8 +30,8 @@ SECRET_KEY = env("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["blog.onstudy.uz", "www.blog.onstudy.uz"]
-CSRF_TRUSTED_ORIGINS = ["https://blog.onstudy.uz"]
+ALLOWED_HOSTS = []
+# CSRF_TRUSTED_ORIGINS = ["https://blog.onstudy.uz"]
 
 
 # Application definition
@@ -86,6 +86,7 @@ DATABASES = {
     }
 }
 
+'''
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
@@ -96,6 +97,7 @@ DATABASES = {
         "PORT": env("DB_PORT"),
     }
 }
+'''
 
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
