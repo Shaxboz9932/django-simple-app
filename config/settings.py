@@ -30,8 +30,8 @@ SECRET_KEY = env("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-# CSRF_TRUSTED_ORIGINS = ["https://blog.onstudy.uz"]
+ALLOWED_HOSTS = ["blog.onstudy.uz"]
+CSRF_TRUSTED_ORIGINS = ["https://blog.onstudy.uz"]
 
 
 # Application definition
@@ -79,6 +79,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -87,6 +88,8 @@ DATABASES = {
 }
 
 '''
+
+
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
@@ -97,7 +100,7 @@ DATABASES = {
         "PORT": env("DB_PORT"),
     }
 }
-'''
+
 
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
